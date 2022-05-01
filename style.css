@@ -1,0 +1,110 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background: #d0254e;
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background: #fff;
+    box-shadow: 0px 0px 20px 5px rgba (255, 255, 255, 0.2);
+    border-radius: 40px;
+
+}
+
+.menu .indicator {
+    position: absolute;
+    left: 20px;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    background:#d0254e;
+    border-radius: 50%;
+
+}
+
+.menu .list {
+    display: flex;
+    gap: 20px;
+
+}
+
+.menu .list .item {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.menu .list .item i {
+    font-size: 18px;
+    color: #111;
+}
+
+.menu .list .item:before {
+    content: attr(tooltip);
+    position: absolute;
+    top: -75px;
+    left: -150%;
+    transform: translateX(-50%);
+    background: #fff;
+    line-height: initial;
+    padding: 5px 10px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: left 0ms ease-in-out 300ms,
+    top 300ms ease-in-out 0ms,
+    opacity 300ms ease-in-out 0ms;
+
+
+}
+
+.menu .list .item:after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -150%;
+    transform: translateX(-50%) rotate(45deg);
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: left 0ms ease-in-out 300ms,
+    top 300ms ease-in-out 0ms,
+    opacity 300ms ease-in-out 0ms;
+
+
+}
+.menu .list .item:hover:before{
+    left:50%;
+    top:-55px;
+    opacity: 1;
+    transition: left 0ms ease-in-out 0ms,
+                top 300ms ease-in-out 0ms,
+                opacity 300ms ease-in-out 0ms;
+}
+.menu .list .item:hover:after{
+    left:50%;
+    top:-30px;
+    opacity: 1;
+    transition: left 0ms ease-in-out 0ms,
+                top 300ms ease-in-out 0ms,
+                opacity 300ms ease-in-out 0ms;
+}
+.menu .list .item.active i{
+    color: #fff;
+}
